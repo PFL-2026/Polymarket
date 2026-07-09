@@ -4639,3 +4639,41 @@ body.terms-modal-open { overflow: hidden; }
 .watch-bet-visual .wb-frame.is-playing .wb-live-pill { opacity: 1; }
 /* Once playing, drop the dark scrim */
 .watch-bet-visual .wb-frame.is-playing::after { opacity: 0; }
+
+/* === Slide entrance: load everything in one go (no staggered taper) === */
+/* All slide elements share a single quick fade with zero stagger, so the whole
+   slide appears together the moment it becomes active. */
+.slide.active .eyebrow,
+.slide.active .slide-title,
+.slide.active .slide-subtitle,
+.slide.active .slide-body,
+.slide.active .pillar,
+.slide.active .pillar:nth-child(1),
+.slide.active .pillar:nth-child(3),
+.slide.active .pillar:nth-child(5),
+.slide.active .stat-card,
+.slide.active .stat-card:nth-child(1),
+.slide.active .stat-card:nth-child(2),
+.slide.active .stat-card:nth-child(3),
+.slide.active .merch-item,
+.slide.active .merch-item:nth-child(1),
+.slide.active .merch-item:nth-child(2),
+.slide.active .merch-item:nth-child(3),
+.slide.active .merch-item:nth-child(4),
+.slide.active .hosp-perk,
+.slide.active .hosp-perk:nth-child(1),
+.slide.active .hosp-perk:nth-child(2),
+.slide.active .hosp-perk:nth-child(3),
+.slide.active .hosp-perk:nth-child(4),
+.slide.active .bim-card,
+.slide.active .bim-card:nth-child(1),
+.slide.active .bim-card:nth-child(2),
+.slide.active .bim-card:nth-child(3),
+.slide.active .bim-card:nth-child(4) {
+    animation: fadeIn 0.35s ease both !important;
+    animation-delay: 0s !important;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
